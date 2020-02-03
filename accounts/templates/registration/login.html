@@ -1,0 +1,17 @@
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <form method="post" action="/oauth/disconnect/github/"></form>
+    <button type="submit">Login</button>
+    <a href="/signup"  class="tab">Signup</a>
+
+  </form>
+  <br>
+{{ request.path }}
+  <p><strong>-- OR --</strong></p>
+  <a href="http://simple-social-auth.vitorfs.com/login">Login with GitHub</a><br>
+{% endblock %}
+
